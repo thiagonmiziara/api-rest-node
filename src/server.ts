@@ -18,3 +18,4 @@ app
 
 // comando para rodar o servidor npx tsx src/server.ts
 // script no package.json "dev" para rodar servidor yarn dev
+// comando pra criar uma migration yarn knex migrate:make nome da migration
