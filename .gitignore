@@ -3,3 +3,6 @@
 
 # banco de dados
 db/app.db
+
+# env
+.env
