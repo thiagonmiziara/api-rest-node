@@ -9,6 +9,7 @@ declare module 'knex/types/tables' {
       amount: number
       created_at: string
       session_id?: string
+      type?: 'credit' | 'debit'
     }
   }
 }
