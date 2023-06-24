@@ -6,3 +6,6 @@ db/app.db
 
 # env
 .env
+
+# env test
+.env.test
