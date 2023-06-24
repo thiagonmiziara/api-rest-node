@@ -3,9 +3,13 @@
 
 # banco de dados
 db/app.db
+db/test.db
 
 # env
 .env
 
 # env test
 .env.test
+
+# build
+build
