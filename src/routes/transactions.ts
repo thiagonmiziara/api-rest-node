@@ -96,4 +96,29 @@ export async function transactionsRoutes(app: FastifyInstance) {
     // status code 201 criado com sucesso
     return reply.status(201).send()
   })
+
+  app.delete(
+    '/:id',
+    {
+      preHandler: [checkSessionIdExist],
+    },
+    async (request, reply) => {
+      const deleteTransactionParamsSchema = z.object({
+        id: z.string().uuid(),
+      })
+
+      const { id } = deleteTransactionParamsSchema.parse(request.params)
+
+      const { sessionId } = request.cookies
+
+      await knex('transactions')
+        .where({
+          session_id: sessionId,
+          id,
+        })
+        .del()
+
+      return reply.send({ message: 'Transaction deleted successfully' })
+    },
+  )
 }

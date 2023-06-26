@@ -17,6 +17,7 @@ const envSchema = z.object({
 })
 
 const _env = envSchema.safeParse(process.env)
+console.log('🚀 ~ file: index.ts:20 ~ _env:', _env)
 
 if (!_env.success) {
   console.error('Invalid environment variables!', _env.error.format())
